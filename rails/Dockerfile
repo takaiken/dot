@@ -32,6 +32,8 @@ RUN rails new . -d mysql --skip-bundle || bundle update
 # Webpackerをインストール
 RUN rails webpacker:install
 
+RUN mkdir -p tmp/sockets
+
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
 COPY config $APP_HOME/config
 
