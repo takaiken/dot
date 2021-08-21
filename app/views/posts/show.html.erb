@@ -19,10 +19,18 @@
 <% end %>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 <p>
-    <%= f.text_field :body %>
-    
+    <%= f.text_field :body %>  
 </p>
+<% if @post.image? %>
+  <%= image_tag @post.image.url %>
+<% else %>
+  
+<% end %>
+
 <p>
     <%= f.submit %>
 </p>
+
+<%= link_to 'Back', posts_path %>
+
 <% end %>
