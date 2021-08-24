@@ -11,7 +11,9 @@ RUN curl -sL RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
 # Yarnをインストール
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt update && apt install yarn
+    apt update && apt install yarn 
+
+RUN apt install -y default-mysql-client  
 
 # 環境変数を設定
 ENV APP_HOME /app
